@@ -60,7 +60,7 @@ function setup() {
 
   rock = new Rock(50,200,20);
 
-  slingShot = new Slingshot(rock,{x:100,y:200});
+  slingShot = new Slingshot(rock.body,{x:100,y:200});
 
 }
 
@@ -120,7 +120,7 @@ function draw() {
   slingShot.display();
 }
 function mouseDragged(){
-  Matter.Body.setPosition(rock,{x:mouseX,y:mouseY});
+  Matter.Body.setPosition(rock.body,{x:mouseX,y:mouseY});
 }
 function mouseReleased(){
   slingShot.fly();

@@ -6,8 +6,8 @@ class Slingshot{
             stiffness: 0.04,
             length: 10
         }
+        this.pointB=pointB
         this.sling = Constraint.create(options);
-        this.pointB=pointB;
         World.add(world, this.sling);
     }
 
@@ -21,9 +21,9 @@ class Slingshot{
             var pointB = this.pointB;
             
             strokeWeight(4);
-           // write stroke() to set the color to red
+            stroke(135,206,235);
 
-           // Write line() to draw a line from pointA to pointB
+            line(pointA.x,pointA.y, pointB.x, pointB.y);
 
         }
     }
