@@ -18,7 +18,7 @@ class Block{
         imageMode(CENTER);
         
         //add tint for making the block diapper slowly
-        if(this.body.speed<3){
+        if(this.body.speed<3.5){
           image(this.image, pos.x, pos.y, 30, 40 );
         }
         else{
