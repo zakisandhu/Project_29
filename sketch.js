@@ -128,6 +128,6 @@ function mouseReleased(){
 
 function keyPressed(){
   if(keyCode === 32){
-    slingShot.attach(rock)
+    slingShot.attach(rock.body);
   }
 }

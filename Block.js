@@ -6,30 +6,29 @@ class Block{
             isStatic : false
         }
         
-        this.body = Bodies.rectangle(x, y, width, height, options);
+        this.body = Bodies.rectangle(x, y, 30, 40, options);
         this.width = width;
         this.height = height;
+        this.image = loadImage("block.png");
         this.visbility = 255;
         World.add(world, this.body);
       }
       display(){
-        var angle = this.body.angle;
         var pos= this.body.position;
-        push();
-
+        imageMode(CENTER);
+        
         //add tint for making the block diapper slowly
         if(this.body.speed<3){
-          translate(pos.x, pos.y);
-          rotate(angle);
-          rectMode(CENTER);
-          rect(0,0,this.width, this.height);
+          image(this.image, pos.x, pos.y, 30, 40 );
         }
         else{
           World.remove(world, this.body);
+          push()
           tint(255,this.visbility);
+          image(this.image, pos.x, pos.y, 30, 40 );
           this.visbility = this.visbility - 5;
+          pop()
         }
-
-        pop();
+        
       }
 }
